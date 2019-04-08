@@ -53,7 +53,7 @@ podTemplate(
       }
 
       // TBD: The next two stages should run in parallel
-      stage('Test & Analysis') {
+      stage('QA') {
         parallel {
 
           // Using Maven run the unit tests
