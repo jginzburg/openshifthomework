@@ -21,10 +21,8 @@ podTemplate(
     def mvnCmd = "mvn -s ../nexus_settings.xml"
 
     // Set Development and Production Project Names
-    def devProject  = "${GUID}-tasks-dev"
-    def prodProject = "${GUID}-tasks-prod"
-
-    // Set the tag for the development
+    def devProject  = "4900-tasks-dev"
+    def prodProject = "4900-tasks-prod"
 
     // Checkout Source Code.
     stage('Checkout Source') {
