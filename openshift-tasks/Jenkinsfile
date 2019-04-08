@@ -180,10 +180,8 @@ podTemplate(
       }
 
       stage('Switch over to new Version') {
-        echo "Switching Production application to ${destApp}."
-        // TBD: Execute switch
 
-        input "Switch Production?"
+        // input "Switch Production?"
 
         echo "Switching Production application to ${destApp}."
         script {
