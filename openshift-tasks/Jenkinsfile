@@ -1,4 +1,5 @@
 #!groovy
+def GUID = "4900"
 podTemplate(
   label: "skopeo-pod",
   cloud: "openshift",
@@ -6,7 +7,7 @@ podTemplate(
   containers: [
     containerTemplate(
       name: "jnlp",
-      image: "docker-registry.default.svc:5000/4900-jenkins/jenkins-agent-appdev",
+      image: "docker-registry.default.svc:5000/${GUID}-jenkins/jenkins-agent-appdev",
       resourceRequestMemory: "1Gi",
       resourceLimitMemory: "2Gi",
       resourceRequestCpu: "1",
@@ -21,8 +22,8 @@ podTemplate(
     def mvnCmd = "mvn -s ../nexus_settings.xml"
 
     // Set Development and Production Project Names
-    def devProject  = "4900-tasks-dev"
-    def prodProject = "4900-tasks-prod"
+    def devProject  = "${GUID}-tasks-dev"
+    def prodProject = "${GUID}-tasks-prod"
 
     // Checkout Source Code.
     stage('Checkout Source') {
