@@ -1,5 +1,5 @@
 #!groovy
-def GUID = "4900"
+def GUID = "f1c5"
 podTemplate(
   label: "skopeo-pod",
   cloud: "openshift",
@@ -27,7 +27,7 @@ podTemplate(
 
     // Checkout Source Code.
     stage('Checkout Source') {
-      git 'https://github.com/benxar/advdev_homework.git'
+      git 'https://github.com/jginzburg/openshifthomework'
     }
 
     // Build the Tasks Service
